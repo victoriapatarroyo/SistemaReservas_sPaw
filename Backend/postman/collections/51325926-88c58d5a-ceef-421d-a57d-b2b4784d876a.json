@@ -1,0 +1,1033 @@
+{
+	"info": {
+		"_postman_id": "51325926-88c58d5a-ceef-421d-a57d-b2b4784d876a",
+		"name": "spaw",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "buscarGrommer",
+			"id": "51325926-7c2a10e9-be62-487c-bc3b-1d6f838dae1a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/groomers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"groomers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarGrormmerPorId",
+			"id": "51325926-1c982e92-53bd-4c20-a0b8-d838513e2c4e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/groomers/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"groomers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crearGroomer",
+			"id": "51325926-d741e032-a669-4771-97b4-efaa4bdff787",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\" : \"pepe\",\n    \"apellido\" : \"Pelaez\",\n    \"telefono\" : \"1111111111\",\n    \"email\" : \"pplaez@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/groomers/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"groomers",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarGroomer",
+			"id": "51325926-01b2469b-c4d9-4441-a6f9-8bedf8dae9db",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/groomers/actualizar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"groomers",
+						"actualizar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarGroomer",
+			"id": "51325926-5f8a0c09-7412-4855-99a3-d81bb1715272",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/groomers/eliminar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"groomers",
+						"eliminar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener mascotas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"id": "dbfbdc55-4b49-4b61-8b51-ccbb00a2a2b0"
+					}
+				}
+			],
+			"id": "51325926-53132396-fde3-4230-8eaa-ac386d7ed41e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/mascotas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mascotas"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerMascotasPorId",
+			"id": "51325926-00de6661-deff-4421-bec8-61f1e3a657a9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/mascotas/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mascotas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerMascotasPorUsuario",
+			"id": "51325926-f02ae427-ff27-4e0c-a1e5-afede044d6ec",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/mascotas/usuario/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mascotas",
+						"usuario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crearMascota",
+			"id": "51325926-9e280da4-da59-4913-9c5b-0e48be1d087a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombreMascota\": \"zeus\",\n    \"usuario\": {\n        \"idUsuario\": 2\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/mascotas/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mascotas",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarMascota",
+			"id": "51325926-c63f23b0-faa1-4830-9cdc-18d7bdb509c0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombreMascota\": \"zeusman\",\n    \"usuario\": {\n        \"idUsuario\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuarios/mascotas/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"mascotas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarMascota",
+			"id": "51325926-24b5448d-fd59-4792-98c8-fa8909f70456",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuarios/mascotas/eliminar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"mascotas",
+						"eliminar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener servicio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"id": "49269b28-5742-4381-a5d1-360752bbf941"
+					}
+				}
+			],
+			"id": "51325926-e4d05342-5a75-49bc-a67f-a8c6d4f80863",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/servicio",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"servicio"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerServicioPorId",
+			"id": "51325926-39e4fccf-025b-4c12-816a-e03aaf2e0698",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/servicio/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"servicio",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Servicio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"id": "ab3674a5-14cc-4314-a882-360ba8cf1f00"
+					}
+				}
+			],
+			"id": "51325926-0a702007-5bc1-4b6f-b014-74ba76e7c7cf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nombre\": \"Combo Revisión & Limpieza\",\n    \"descripcion\": \"Revisión general superficial (piel, patas, oídos), limpieza de oídos, corte de uñas y cepillado profundo.\",\n    \"precioTamPequeno\": 25.000,\n    \"precioTamMediano\": 30.000,\n    \"precioTamGrande\": 40.000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/servicio/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"servicio",
+						"crear"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarServicio",
+			"id": "51325926-59ce6fe0-f40e-42b1-a0cf-8cff9a9678e6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nombre\": \"Combo Revisión & Limpieza\",\n    \"descripcion\": \"Revisión general superficial (piel, patas, oídos), limpieza de oídos, corte de uñas y cepillado profundo.\",\n    \"precioTamPequeno\": 35.000,\n    \"precioTamMediano\": 40.000,\n    \"precioTamGrande\": 50.000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/servicio/actualizar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"servicio",
+						"actualizar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarServicio",
+			"id": "51325926-a939751e-82b7-497e-8138-fda4a7458798",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/servicio/eliminar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"servicio",
+						"eliminar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerUsuarios",
+			"id": "51325926-38f36ead-e456-4a21-8b73-df72ab14516f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerUsuariosPorId",
+			"id": "51325926-89fbbe3d-815d-4940-9536-3ea28a2af2db",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuarios/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrarCliente",
+			"id": "51325926-4f75e5db-17d8-43bb-81e1-205f3310a3e2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"german\",\n    \"apellido\": \"cruz\",\n    \"telefono\": \"+56912345678\",\n    \"email\": \"german.cruz@email.com\",\n    \"passwordUsuario\": \"sPaw2026*\",\n    \"rol\": \"Cliente\",\n    \"mascotas\": [\n        \n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/registro",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrarAdministrador",
+			"id": "51325926-2455fe96-4d80-455b-8a17-4f399c44aaae",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"German\",\n    \"apellido\": \"Cruz\",\n    \"telefono\": \"+56912345678\",\n    \"email\": \"german.cruz@email.com\",\n    \"passwordUsuario\": \"miContrasenaSegura123\",\n    \"rol\": \"Administrador\",\n    \"mascotas\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/registro",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginDTOAdmin",
+			"id": "51325926-c755018c-06c7-489e-bd09-3ebf17cb757b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"german.cruz@email.com\",\n    \"passwordUsuario\" : \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/loginConDTO",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"loginConDTO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginDTo",
+			"id": "51325926-21ab758c-28a4-45a5-8bdd-1b7537cfcf16",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"mariap.perez@email.com\",\n    \"passwordUsuario\" : \"miContrasenaSegura123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/loginConDTO",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"loginConDTO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginKeyAdmin",
+			"id": "51325926-350d95c9-ec00-4de6-a552-d7a64e3b0045",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "loginKey",
+			"id": "51325926-f021f5cb-e598-4f39-a0bf-e73c02508f5e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpYXAucGVyZXpAZW1haWwuY29tIiwiaWF0IjoxNzY4ODUxNTc1LCJleHAiOjE3Njg4ODc1NzV9.l3SVgS1Y51rKDAttPiOZLys6HqbC7njhr7B9SSwyVnM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"mariap.perez@email.com\",\n    \"passwordUsuario\" : \"miContrasenaSegura123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/resource",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"resource"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crearUsuario",
+			"id": "51325926-daeeea16-f68b-4d59-8e7f-45cc82163e87",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Juan\",\n    \"apellido\": \"Pérez\",\n    \"telefono\": \"+56912345678\",\n    \"email\": \"juan.perez@email.com\",\n    \"passwordUsuario\": \"miContraseñaSegura123\",\n    \"rol\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuarios/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarUsuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5fd5a6f6-3bb3-46ba-bd2c-817894ad88d7",
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "51325926-3fbbb81b-f8dd-4f29-b0ae-ed928194c99e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Juan\",\n    \"apellido\": \"Estrada\",\n    \"telefono\": \"+56912345678\",\n    \"email\": \"juan.perez@email.com\",\n    \"passwordUsuario\": \"miContraseñaSegura123\",\n    \"rol\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuarios/1/actualizar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1",
+						"actualizar"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarUsuario",
+			"id": "51325926-e882c2e1-b634-4ce6-87d5-393548ae20aa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuarios/eliminar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"eliminar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerReservas",
+			"id": "51325926-e41cb191-f1e2-4bb3-aa1b-06f62fd1d29f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nombre\": \"Combo Revisión & Limpieza\",\n    \"descripcion\": \"Revisión general superficial (piel, patas, oídos), limpieza de oídos, corte de uñas y cepillado profundo.\",\n    \"precioTamPequeno\": 25.000,\n    \"precioTamMediano\": 30.000,\n    \"precioTamGrande\": 40.000\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/reservas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerReservasPorId",
+			"id": "51325926-c92e25c9-cf8b-43eb-a29b-0e1aa54de908",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/reservas/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerReservasPorFecha",
+			"id": "51325926-d22fb291-f8bd-4ea7-bed0-00d8799f7b18",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerReservasPorMascota",
+			"id": "51325926-7a7e0f10-3ff8-46d9-a364-1d14b38ddbe8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerReservasPorGroomer",
+			"id": "51325926-189fbd1a-b5eb-40f7-b664-b2545fea8606",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "crearReserva",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a2d94250-7b03-4689-8e70-04f7ef0ce668",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "51325926-168371ce-4cb1-4b48-a89b-3f0e596e02db",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fecha\": \"2024-12-15\",\n    \"horaInicio\": \"10:00\",\n    \"horaFinal\": \"11:00\",\n    \"groomer\": {\n        \"idGroomer\": 1\n    },\n    \"servicio\": {\n        \"idServicio\": 2\n    },\n    \"mascota\": {\n        \"idMascota\": 4\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/reservas/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarReserva",
+			"id": "51325926-8fef69d5-6f45-430b-9d7d-ff33ffe5f753",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fecha\": \"2026-01-19\",\n    \"horaInicio\": \"09:00\",\n    \"horaFinal\": \"10:00\",\n    \"groomer\": {\n        \"idGroomer\": 1\n    },\n    \"servicio\": {\n        \"idServicio\": 2\n    },\n    \"mascota\": {\n        \"idMascota\": 4\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/reservas/actualizar/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"actualizar",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarReserva",
+			"id": "51325926-fe615217-971c-435d-b587-347f79d172c7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/reservas/eliminar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"eliminar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "f03e651e-54ac-4c83-b10f-b923423d58a4"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "b7f37047-a81a-4f71-84cd-2580b7985678"
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://template.postman-echo.com"
+		}
+	]
+}

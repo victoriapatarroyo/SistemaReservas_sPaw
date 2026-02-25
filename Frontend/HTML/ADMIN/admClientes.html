@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/navFooter.css">
+    <link rel="stylesheet" href="../../CSS/ADMIN/admClientes.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <title>Administración Clientes</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        <header-admin></header-admin>
+    </header>
+    <main class="flex-grow-1">
+        <div class="container py-4">
+            <h1 class="text-center titulo">
+                Administrador
+            </h1>
+
+            <!-- Sección de tabs -->
+            <ul class="nav nav-tabs justify-content-center w-100 mb-4">
+                <li class="nav-item">
+                    <a class="nav-link custom-tab" href="./index.html">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-tab" href="./admGroomers.html">Groomers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-tab seleccion" href="./admClientes.html">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-tab" href="./admReservas.html">Reservas</a>
+                </li>
+            </ul>
+            <!-- Empieza Seccion botones y tablas -->
+            <!-- Controles -->
+            <div class="controls-section w-100">
+                <div class="row justify-content-center align-items-center g-3">
+                    <h3 class="mt-3 mb-3 subtitulo" id="tituloFormulario">
+                        Información de Usuarios
+                    </h3>                    
+                    <!-- Recargar Usuarios -->
+                    <div class="col-12 col-md-auto d-flex justify-content-center">
+                        <button class="btn-reload px-4" onclick="cargarUsuarios()">
+                            <i class="bi bi-arrow-clockwise"></i> Recargar Usuarios
+                        </button>
+                    </div>
+                    <!-- Filtro por rol -->
+                    <div class="col-12 col-md-auto d-flex justify-content-center">
+                        <select class="filter-select px-4" id="filtroRol" onchange="filtrarPorRol()">
+                            <option value="">Todos los roles</option>
+                            <option value="Cliente">Cliente</option>
+                            <option value="Administrador">Administrador</option>
+                        </select>
+                    </div>
+                    <!-- Total usuarios -->
+                    <div class="col-12 col-md-auto d-flex justify-content-center">
+                        <span class="stats-badge">
+                            Total de usuarios: <span id="totalUsuarios">0</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor de tabla -->
+            <div id="contenedor"></div>
+            <!-- Termina Seccion botones y tablas -->
+        </div>
+    </main>
+
+    <footer class="footer-custom py-5">
+        <footer-component></footer-component>
+    </footer>
+
+    <div class="footer-copy text-center py-2">
+        ©2025 sPaw. Todos los derechos reservados
+    </div>
+    <script src="../../components/headerAdmin.js"></script>
+    <script src="../../components/footer.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../JS/ADMIN/admClientes.js"></script>    
+    <script src="../../JS/indexSesionAdm.js"></script>
+</body>
+</html>

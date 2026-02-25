@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas sPaw</title>
+    <link rel="stylesheet" href="../CSS/navFooter.css">
+    <link rel="stylesheet" href="../CSS/reservas.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+
+<body>
+    <header>
+        <header-component></header-component>
+    </header>
+    <main class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
+        <section class="servicios-reservados container my-5">
+            <h2 class="subtitulo text-center fw-bold mb-4">Mis Reservas</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="servicio-reservado">
+                <!-- Las cards se cargan aquí -->
+            </div>
+        </section>
+        <button class="boton-login" id="btnReserva" onclick="nuevaReserva()">Hacer una Reserva</button>
+        <section id="seccionReserva" class="reservas container justify-content-center flex-grow-1 d-none">
+            <div class="contacto d-flex flex-column align-items-center my-3 p-3 rounded-2">
+                <div class="container">
+                    <h2 class="text-center mb-2 section-title titulo" id="Contacto">Reserva ahora</h2>
+                </div>
+                <div class="container d-flex justify-content-around flex-column flex-lg-row">
+                    <div class="d-flex flex-column w-100 w-md-50 p-md-3 my-3 gap-1 order-2 order-md-1 text-center">
+                        <p class="subtitulo2 text-center mt-3 mb-3">Vamos a reservar ahora la cita para tu mascota</p>
+
+                        <form class="form-reserva mx-auto mt-3" id="formReserva">
+                            <!-- Nombre mascota -->
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-select-lg entrada" id="nombreMascota"
+                                    name="nombreMascota" required>
+                                    <option value="" disabled selected></option>                            
+                                </select>
+                                <label for="nombreMascota">Escribe el nombre de tu mascota</label>
+                            </div>
+
+                            <!-- Groomer -->
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-select-lg entrada" id="nombreGroomer"
+                                    name="nombreGroomer" required>
+                                    <option value="" disabled selected></option>
+                                </select>
+                                <label for="nombreGroomer">Selecciona tu groomer favorito</label>
+                            </div>
+                            <!-- Servicio -->
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-select-lg entrada" id="nombreServicio"
+                                    name="nombreServicio" required>
+                                    <option value="" disabled selected></option>
+
+                                </select>
+                                <label for="nombreServicio">Selecciona un servicio</label>
+                            </div>
+                            <!-- Fecha -->
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control form-control-lg entrada" id="fechaReserva"
+                                    name="fechaReserva" placeholder=" " data-input required>
+                                <label for="fechaReserva">Selecciona una fecha</label>
+                            </div>
+                            <!-- Hora -->
+                            <div class="form-floating mb-3">
+                                <select class="form-select form-select-lg entrada" id="horaReserva" name="horaReserva"
+                                    required>
+                                    <option value="" disabled selected></option>
+                                    <option value="08:00">08:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="18:00">06:00 PM</option>
+                                </select>
+                                <label for="horaReserva">Selecciona una hora</label>
+                            </div>
+                            <!-- Botón -->
+                            <div class="form-floating d-flex justify-content-center mt-4">
+                                <button type="button" id="btnReservar" class="boton-login">Reservar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="imagen-contacto w-100 w-md-50 p-md-3 order-1">
+                        <img class="img-contacto w-100" src="../IMG/spaw18.png" alt="">
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <div id="protected-data" style="margin-top: 1rem;"></div>
+    </main>
+    <footer class="footer-custom py-5">
+        <footer-component></footer-component>
+    </footer>
+    <div class="footer-copy text-center py-2">
+        ©2025 sPaw. Todos los derechos reservados
+    </div>
+
+    <!-- Librerias -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+
+    <!--componentes-->
+    <script src="../components/reservaCard.js"></script>
+    <script src="../components/header.js"></script>
+    <script src="../components/footer.js"></script>
+
+    <!-- scripts -->
+    <script src="../JS/alertas.js"></script>
+    <script src="../JS/reservas.js"></script>
+    <script src="../JS/indexSesion.js"></script>
+
+</body>
+
+</html>

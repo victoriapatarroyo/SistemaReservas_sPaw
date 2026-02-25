@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/navFooter.css">
+    <link rel="stylesheet" href="../CSS/inicioSesion.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>InicioDeSesión</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        <header-component></header-component>
+    </header>
+    <main class="d-flex align-items-center justify-content-center flex-grow-1">
+        <section class="container justify-content-center flex-grow-1">
+            <div class="contacto d-flex flex-column align-items-center my-3 p-3 rounded-2">
+
+                <div class="container d-flex justify-content-around flex-column flex-md-row">
+                    <div
+                        class="d-flex flex-column w-100 w-md-50 p-md-3 justify-content-around gap-1 order-2 order-md-1">
+                        <!-- Formulario de contacto -->
+                        <form class="container-form w-100 d-flex flex-column justify-content-between gap-5"
+                            id="formInicioSesion" novalidate>
+                            <!-- Titulo de formulario -->
+                            <div class="container">
+                                <p class="text-center mb-1 section-title titulo" id="Contacto">Inicio de Sesión</p>
+                            </div>
+                            <!--Email-->
+                            <div class="form-floating" id="email-form">
+                                <input type="email" class="form-control entrada" id="email" name="email" placeholder="">
+                                <label for="email">Email</label>
+
+                            </div>
+
+                            <!--Password-->
+                            <div class="form-floating position-relative" id="pass-form">
+                                <input type="password" class="form-control entrada" id="password" name="password"
+                                    placeholder="">
+
+                                <!-- Ojo de Password -->
+                                <button type="button"
+                                    class="btn pass-toggle-btn position-absolute top-50 end-0 translate-middle-y me-3"
+                                    id="mostrarPass" title="Mostrar/Ocultar contraseña">
+                                    <i class="bi bi-eye toggle-password" id="eyeIcon"></i>
+                                </button>
+                                <label for="password">Ingresa tu contraseña</label>
+                            </div>
+                            <!--Botón enviar-->
+                            <div class="form-floating d-flex justify-content-center">
+                                <button type="submit" onclick="" class="boton-login">Ingresar</button>
+                            </div>
+                            <!-- Mensaje de registro-->
+                            <div class="justify-content-center parrafo">
+                                <p class="text-center">¿No tienes cuenta? <a href="./registro.html">Regístrate aquí</a>
+                                </p>
+                            </div>
+                            <p id="error" class="text-danger text-center"></p>
+
+                        </form>
+                        <!-- Contenedor para alertas -->
+                        <div id="alertContainer"></div>
+                    </div>
+                    <div class="imagen-contacto w-100 w-md-50 p-md-3 order-1">
+                        <img class="img-contacto w-100" src="../IMG/spaw5.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-custom py-5">
+        <footer-component></footer-component>
+    </footer>
+    <div class="footer-copy text-center py-2">
+        ©2025 sPaw. Todos los derechos reservados
+    </div>
+
+    <!--componentes-->
+    <script src="../components/header.js"></script>
+    <script src="../components/footer.js"></script>
+
+    <script src="../JS/alertas.js"></script>
+    <script src="../JS/inicioSesion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

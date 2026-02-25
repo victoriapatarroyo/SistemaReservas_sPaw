@@ -1,0 +1,179 @@
+/* Ojo */
+.pass-toggle-btn {
+  position: absolute !important;
+  right: 1rem;
+  /* right: 10px !important; */
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  padding: 0;
+  /* padding: 8px 12px !important; */
+  border: none !important;
+  background: transparent !important;
+  z-index: 5;
+  color: #ffff; 
+  line-height: 1;
+}
+
+.entrada {
+    padding-right: 45px;
+}
+
+
+/* INPUTS INICIO DE SESIÓN */
+
+@media (min-width: 768px) {
+    #formInicioSesion .form-floating {
+        width: 80%;
+        height: 62px;
+        margin: 0 auto;
+    }
+    #formInicioSesion .password-toggle {
+        bottom: 0.55rem;
+    }
+    #formInicioSesion .error-message {
+        bottom: -18px;
+    }
+}
+
+/* INPUT */
+#formInicioSesion .form-floating > .form-control {
+    height: 38px !important;
+    padding-top: 1.15rem !important;
+    padding-bottom: 0.25rem !important;
+    font-size: 1rem;
+}
+.form-floating {
+    position: relative;
+}
+
+/*  layout */
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Quitar iconos de validación de Bootstrap SOLO en password */
+#password.is-invalid,
+#password.is-valid {
+  background-image: none !important;
+  padding-right: 3rem !important; /* deja espacio para el ojo */
+}
+
+/* Ojo normal */
+#eyeIcon {
+  color: white;
+  transition: color 0.2s ease;
+}
+
+/* Ojo en error */
+#password.is-invalid ~ button #eyeIcon {
+  color: #dc3545; /* rojo Bootstrap */
+}
+
+#password {
+  padding-right: 3rem !important;
+}
+
+/* Posición correcta del icono */
+.form-control.is-valid,
+.form-control.is-invalid {
+    padding-right: 3rem !important;
+    background-position: right 1rem center !important;
+}
+
+#pass-form {
+  position: relative;
+}
+
+/* Reservar espacio SIEMPRE */
+#password {
+  padding-right: 3rem !important;
+}
+
+/* Conservar el color de texto y fondo en los campos del formulario */
+
+.container-form input:-webkit-autofill,
+.container-form input:-webkit-autofill:hover,
+.container-form input:-webkit-autofill:focus,
+.container-form textarea:-webkit-autofill,
+.container-form select:-webkit-autofill {
+
+    -webkit-text-fill-color: #ffffff !important; /* texto blanco */
+    caret-color: #ffffff;
+
+    -webkit-box-shadow: 0 0 0 30px #2ab7ae inset !important;
+    box-shadow: 0 0 0 30px #2ab7ae inset !important;
+
+    background-color: #2ab7ae !important;
+
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.container-form input,
+.container-form select,
+.container-form textarea {
+  color: #ffffff !important;
+  caret-color: #ffffff;
+}
+
+.container-form input:focus,
+.container-form select:focus,
+.container-form textarea:focus {
+  color: #ffffff !important;
+}
+
+/* Fuerza color blanco en TODOS los estados */
+.container-form .form-control,
+.container-form .form-select,
+.container-form textarea {
+  color: #fff !important;
+  caret-color: #fff;
+}
+
+/* Focus */
+.container-form .form-control:focus,
+.container-form .form-select:focus,
+.container-form textarea:focus {
+  color: #fff !important;
+}
+
+/* Validación Bootstrap */
+.container-form .form-control.is-valid,
+.container-form .form-control.is-invalid,
+.container-form .form-select.is-valid,
+.container-form .form-select.is-invalid {
+  color: #fff !important;
+}
+
+/* Autofill Chrome */
+.container-form input:-webkit-autofill,
+.container-form input:-webkit-autofill:hover,
+.container-form input:-webkit-autofill:focus,
+.container-form textarea:-webkit-autofill,
+.container-form select:-webkit-autofill {
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff;
+  box-shadow: 0 0 0 30px #2ab7ae inset !important;
+  background-color: #2ab7ae !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Form-floating (clave) */
+.container-form .form-floating > .form-control,
+.container-form .form-floating > .form-select {
+  color: #fff !important;
+}
+
+.img-contacto {
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    display: block;
+}

@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* Ajustes para reducir el espacio de la sección testimonios */
+.testimonios-section {
+  max-height: none; /* Removido el límite de altura */
+  padding-bottom: 1rem; /* Reducido espacio antes del footer */
+  margin-bottom: 0; /* Sin margen inferior */
+}
+
+.testimonios-section .container-fluid {
+  padding-top: 2rem; /* Reducido padding superior */
+  padding-bottom: 1rem; /* Reducido padding inferior */
+}
+
+.carousel-container {
+  padding: 0; /* Eliminado todo el padding */
+  margin-bottom: 0;
+  max-height: 350px; /* Limitado la altura máxima */
+}
+
+#carouselCards {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 0;
+}
+
+/* Reducir margen inferior de las cards */
+.testimonios-section .col-lg-4 {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Reducir altura del carousel-inner */
+.testimonios-section .carousel-inner {
+  max-height: 220px; /* Reducido de 280px a 220px */
+  overflow: visible;
+}
+
+/* Reducir altura de las cards con tamaño uniforme */
+.testimonios-section .card {
+  min-width: calc((100% - 40px) / 3);
+  width: 375px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  height: 200px; /* Reducido de 260px a 200px */
+}
+
+.testimonios-section .card-body {
+  padding: 12px; /* Reducido de 15px a 12px */
+  display: flex;
+  flex-direction: column;
+  background-color: #9CECE6;
+  height: 100%; /* Ocupa toda la altura de la card */
+}
+
+/* Ocultar los botones de navegación */
+.testimonios-section .carousel-control-prev,
+.testimonios-section .carousel-control-next {
+  display: none;
+}
+
+/* Estilo mejorado para los indicadores en forma de barras */
+.testimonios-section .carousel-indicators {
+  position: relative;
+  margin-top: 0.5rem; /* Reducido aún más */
+  margin-bottom: 0;
+  bottom: auto;
+}
+
+.testimonios-section .carousel-indicators button {
+  width: 40px; /* Ancho de la barra */
+  height: 4px; /* Altura de la barra */
+  border-radius: 2px; /* Bordes ligeramente redondeados */
+  background-color: #2ab7ae;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  border: none;
+  margin: 0 6px;
+}
+
+.testimonios-section .carousel-indicators button.active {
+  background-color: #F08E3A;
+  opacity: 1;
+  width: 50px; /* La barra activa es más ancha */
+}
+
+/* Ajuste de altura de las cards */
+.card {
+  min-width: calc((100% - 40px) / 3);
+  width: 375px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  height: auto; /* Altura automática */
+  margin-bottom: 1rem; /* Margen controlado */
+}
+
+.card-body {
+  padding: 20px; /* Reducido el padding */
+  display: flex;
+  flex-direction: column;
+  background-color: #9CECE6;
+  height: auto; /* Altura automática en lugar de fija */
+  min-height: 180px; /* Altura mínima */
+}
+
+/* Ajuste del título de la sección */
+.h1.fredoka-semi-bold {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 60px;
+  color: #2ab7ae;
+  margin-bottom: 1.5rem; /* Reducido margen inferior */
+  margin-top: 0; /* Sin margen superior */
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .card {
+    height: auto;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: 0 20px;
+    max-height: none; /* Removido el límite */
+  }
+  
+  .card {
+    margin: 0 5px 1rem 5px;
+    height: auto;
+    min-height: 380px;
+  }
+  
+  .testimonios-section {
+    padding-bottom: 1rem;
+  }
+}

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/navFooter.css">
+    <link rel="stylesheet" href="./CSS/testimonios.css">
+    <link rel="stylesheet" href="./CSS/servicios.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <title>sPaw</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg menu">
+            <div class="container-fluid d-flex align-items-center">
+                <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                    <img class="logo" src="../IMG/logo-row-02.png" alt="logo-sPaw">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4 pe-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./HTML/quienesSomos.html">Quienes somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./HTML/servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./HTML/contactenos.html">Contáctanos</a>
+                        </li>
+                    </ul>
+                    <a href="/HTML/inicioSesion.html" class="boton-login" id="btnLogin">Iniciar Sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Empieza seccion carrusel -->
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active ">
+                    <img src="./IMG/spaw16.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption px-4">
+                        <h5>Bienvenidos a sPaw</h5>
+                        <p>Un día para que tu perro disfrute</p>
+                        <button class="boton-login">Mira nuestros servicios</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./IMG/spaw15.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption px-4">
+                        <h5>Conoce Nuestros Testimonios</h5>
+                        <p>Describe porque nuestros clientes prefieren nuestros servicios</p>
+                        <button class="boton-login">Mira nuestros testimonios</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./IMG/spaw17.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption px-4">
+                        <h5>¿Quieres reservar?</h5>
+                        <p>Para hacer tu reservación puedes</p>
+                        <button class="boton-login">Regístrate aquí</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="previous" aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="next" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!--Texto sPaw-->
+        <section class="inicio">
+            <div class="container">
+                <h1 class="titulo">Servicios de Spa Canino</h1>
+                <p class="textoInicio">
+                    En sPaw, creemos que tu mascota merece tanto cuidado y bienestar como tú.
+                    Hemos creado un espacio diseñado para consentir, relajar y cuidar a tu mejor amigo con
+                    servicios especializados que combinan higiene, salud y amor.<br><br>
+                    Contamos con profesionales capacitados, productos de alta calidad y un ambiente tranquilo
+                    que garantiza una experiencia segura y agradable para tu peludo. Desde baños relajantes y
+                    grooming profesional hasta tratamientos especiales, cada servicio está pensado para mejorar
+                    su bienestar físico y emocional.<br><br>
+                    Déjanos consentir a tu mascota como se merece. Agenda tu cita hoy y regálale una experiencia
+                    de cuidado, relajación y felicidad. Porque cuando ellos están bien, tú también lo estás.
+                </p>
+            </div>
+        </section>
+        <!--Fin texto sPaw-->
+        <!-- Empieza seccion servicios destacados -->
+        <section class="cards-servicios container text-center mb-5">
+            <h2 class="Premium subtitulo mb-3"> Servicios básicos</h2>
+            <div class="container">
+                <div class="row g-4 justify-content-center" id="servicios_Basicos">
+                            <!-- Combo Dental -->
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                                <div
+                                    class="card-servicio rounded-5 p-4 h-100 d-flex flex-column align-items-center justify-content-between text-center">
+
+                                    <div class="dog-mask mb-3">
+                                        <img src="../IMG/spaw22.png" class="img-básicos" alt="Imagen perro">
+                                    </div>
+
+                                    <h3 class="tercertitulo">Combo Dental & Limpieza de Oídos</h3>
+
+                                    <p class="descripcion">
+                                        Cepillado dental básico, limpieza profunda de oídos, corte de uñas y cepillado de pelaje.
+                                    </p>
+
+                                    <p class="fw-bold">Tamaño:</p>
+
+                                    <div class="d-flex justify-content-center gap-2 mb-3">
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 30000)">Pequeño</button>
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 40000)">Mediano</button>
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 50000)">Grande</button>
+                                    </div>
+
+                                    <p class="precio-final fw-bold fs-4">$<span>—</span></p>
+
+                                    <button class="boton-login btn-agenda" onclick="agendar()">¡Agenda ahora!</button>
+                                </div>
+                            </div>
+
+                            <!-- Combo Deslanado -->
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                                <div
+                                    class="card-servicio rounded-5 p-4 h-100 d-flex flex-column align-items-center justify-content-between text-center">
+
+                                    <div class="dog-mask mb-3">
+                                        <img src="../IMG/spaw5.png" class="img-básicos" alt="Imagen perro">
+                                    </div>
+
+                                    <h3 class="tercertitulo">Combo Deslanado Básico</h3>
+
+                                    <p class="descripcion">
+                                        Baño, secado y cepillado intensivo para eliminar pelo muerto, limpieza de oídos y corte de uñas.
+                                    </p>
+
+                                    <p class="fw-bold">Tamaño:</p>
+
+                                    <div class="d-flex justify-content-center gap-2 mb-3">
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 45000)">Pequeño</button>
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 55000)">Mediano</button>
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 70000)">Grande</button>
+                                    </div>
+
+                                    <p class="precio-final fw-bold fs-4">$<span>—</span></p>
+
+                                    <button class="boton-login btn-agenda" onclick="agendar()">¡Agenda ahora!</button>
+                                </div>
+                            </div>
+
+                            <!-- Combo Baño Básico -->
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                                <div
+                                    class="card-servicio rounded-5 p-4 h-100 d-flex flex-column align-items-center justify-content-between text-center">
+
+                                    <div class="dog-mask mb-3">
+                                        <img src="../IMG/spaw27.png" class="img-básicos" alt="Imagen perro">
+                                    </div>
+
+                                    <h3 class="tercertitulo">Combo Baño Básico</h3>
+
+                                    <p class="descripcion">
+                                        Baño con shampoo neutro, secado profesional, limpieza de oídos y corte de uñas. Ideal para mantener la higiene.
+                                    </p>
+
+                                    <p class="fw-bold">Tamaño:</p>
+
+                                    <div class="d-flex justify-content-center gap-2 mb-3">
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 35000)">Pequeño</button>
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 45000)">Mediano</button>
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 55000)">Grande</button>
+                                    </div>
+
+                                    <p class="precio-final fw-bold fs-4">$<span>—</span></p>
+
+                                    <button class="boton-login btn-agenda" onclick="agendar()">¡Agenda ahora!</button>
+                                </div>
+                            </div>
+
+                            <!-- Combo Grooming -->
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                                <div
+                                    class="card-servicio rounded-5 p-4 h-100 d-flex flex-column align-items-center justify-content-between text-center">
+
+                                    <div class="dog-mask mb-3">
+                                        <img src="../IMG/spaw26.png" class="img-básicos" alt="Imagen perro">
+                                    </div>
+
+                                    <h3 class="tercertitulo">Combo Grooming Completo</h3>
+
+                                    <p class="descripcion">
+                                        Baño, secado y corte de pelo según raza o preferencia, perfilado de rostro y patas, corte de uñas y colonia hipoalergénica.
+                                    </p>
+
+                                    <p class="fw-bold">Tamaño:</p>
+
+                                    <div class="d-flex justify-content-center gap-2 mb-3">
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 60000)">Pequeño</button>
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 75000)">Mediano</button>
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 95000)">Grande</button>
+                                    </div>
+
+                                    <p class="precio-final fw-bold fs-4">$<span>—</span></p>
+
+                                    <button class="boton-login btn-agenda" onclick="agendar()">¡Agenda ahora!</button>
+                                </div>
+                            </div>
+
+                            <!-- Combo Antipulgas -->
+                            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                                <div
+                                    class="card-servicio rounded-5 p-4 h-100 d-flex flex-column align-items-center justify-content-between text-center">
+
+                                    <div class="dog-mask mb-3">
+                                        <img src="../IMG/spaw25.png" class="img-básicos" alt="Imagen perro">
+                                    </div>
+
+                                    <h3 class="tercertitulo">Combo Antipulgas Total</h3>
+
+                                    <p class="descripcion">
+                                        Baño antipulgas y antigarrapatas, limpieza profunda de oídos, corte de uñas y revisión completa de piel.
+                                    </p>
+
+                                    <p class="fw-bold">Tamaño:</p>
+
+                                    <div class="d-flex justify-content-center gap-2 mb-3">
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 40000)">Pequeño</button>
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 50000)">Mediano</button>
+                                        <button class="btn-size"
+                                            onclick="seleccionarPrecio(this, 65000)">Grande</button>
+                                    </div>
+
+                                    <p class="precio-final fw-bold fs-4">$<span>—</span></p>
+
+                                    <button class="boton-login btn-agenda" onclick="agendar()">¡Agenda ahora!</button>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+        </section>
+        <!-- termina seccion servicios destacados -->
+        <!-- Inicio testimonios-->
+        <section class="testimonios-section">
+            <div class="container">
+                <!-- Encabezado de la sección -->
+                <div class="section-heading">
+                    <h2>Testimonios de Nuestros Clientes</h2>
+                </div>
+
+                <!-- Carrusel de Testimonios -->
+                <div id="carouselTestimonios" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Indicadores -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="0"
+                            class="active"></button>
+                        <button type="button" data-bs-target="#carouselTestimonios" data-bs-slide-to="1"></button>
+                    </div>
+
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+                        <!-- Slide 1 - Primeros 3 testimonios -->
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <!-- Testimonio 1 -->
+                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                    <div class="testimonio-card">
+                                        <p class="testimonio-text">
+                                            "Excelente servicio! Max salió hermoso después del grooming completo. El
+                                            personal es muy cariñoso y profesional con las mascotas. Definitivamente
+                                            volveremos y lo recomiendo 100%."
+                                        </p>
+                                        <p class="cliente-nombre">María González</p>
+                                    </div>
+                                </div>
+
+                                <!-- Testimonio 2 -->
+                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                    <div class="testimonio-card">
+                                        <p class="testimonio-text">
+                                            "El combo antipulgas total fue increíble. Luna tenía un problema serio y
+                                            después del tratamiento quedó perfecta. El precio es muy razonable para la
+                                            calidad del servicio."
+                                        </p>
+                                        <p class="cliente-nombre">Carlos Rodríguez</p>
+                                    </div>
+                                </div>
+
+                                <!-- Testimonio 3 -->
+                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                    <div class="testimonio-card">
+                                        <p class="testimonio-text">
+                                            "El spa premium fue todo un lujo para Rocky. El masaje relajante y la
+                                            hidratación profunda dejaron su pelaje increíble y brillante. ¡Vale cada
+                                            peso!"
+                                        </p>
+                                        <p class="cliente-nombre">Ana Martínez</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 - Siguientes 3 testimonios -->
+                        <div class="carousel-item">
+                            <div class="row">
+                                <!-- Testimonio 4 -->
+                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                    <div class="testimonio-card">
+                                        <p class="testimonio-text">
+                                            "Llevé a Toby para su primer spa siendo cachorro y fue una experiencia
+                                            maravillosa. Fueron muy pacientes y delicados con él. Ahora ya no le tiene
+                                            miedo al secador."
+                                        </p>
+                                        <p class="cliente-nombre">Pedro Sánchez</p> 
+                                    </div>
+                                </div>
+
+                                <!-- Testimonio 5 -->
+                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                    <div class="testimonio-card">
+                                        <p class="testimonio-text">
+                                            "El baño básico es perfecto para mantener a Bella siempre limpia y fresca.
+                                            El servicio es rápido, eficiente y a un precio muy accesible. El personal
+                                            siempre es amable y mi perra sale feliz."
+                                        </p>
+                                        <p class="cliente-nombre">Laura Jiménez</p>
+                                    </div>
+                                </div>
+
+                                <!-- Testimonio 6 -->
+                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                    <div class="testimonio-card">
+                                        <p class="testimonio-text">
+                                            "Súper recomendado. Mi Pastor Alemán quedó espectacular con el grooming. Son
+                                            muy profesionales y tratan a las mascotas con mucho amor. Los precios son
+                                            justos y el resultado excelente."
+                                        </p>
+                                        <p class="cliente-nombre">Jorge López</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Fin testimonios-->
+    </main>
+    <footer class="footer-custom py-5">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <!-- Logo -->
+                <div class="col-md-4 d-flex justify-content-center justify-content-md-start mb-4 mb-md-0">
+                    <img src="../IMG/logo-03.png" class="footer-logo" alt="Logo sPaw">
+                </div>
+                <!-- Información  -->
+                <div class="col-md-8">
+                    <div class="row g-4 align-items-start">
+                        <!-- Correo -->
+                        <div class="col-12 col-md-5">
+                            <div class="info-item d-flex gap-3 mb-3">
+                                <i class="bi bi-envelope-fill info-icon"></i>
+                                <div>
+                                    <h6 class="info-title">Correo</h6>
+                                    <p class="info-text mb-0">spaw@spaw.com</p>
+                                </div>
+                            </div>
+                            <!-- Teléfono -->
+                            <div class="info-item d-flex gap-3">
+                                <i class="bi bi-telephone-fill info-icon"></i>
+                                <div>
+                                    <h6 class="info-title">Teléfono</h6>
+                                    <p class="info-text mb-0">+57 3485784413</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Horarios -->
+                        <div class="col-12 col-md-5">
+                            <div class="info-item d-flex gap-3 mb-3">
+                                <i class="bi bi-clock-fill info-icon"></i>
+                                <div>
+                                    <h6 class="info-title">Horarios</h6>
+                                    <p class="info-text mb-0">Lun-Dom: 8:00AM - 7:00PM</p>
+                                </div>
+                            </div>
+                            <!-- Dirección -->
+                            <div class="info-item d-flex gap-3">
+                                <i class="bi bi-geo-alt-fill info-icon"></i>
+                                <div>
+                                    <h6 class="info-title">Dirección</h6>
+                                    <p class="info-text mb-0">Cra 21 #112 - 36, Bogotá, Colombia</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Redes -->
+                        <div class="col-12 col-md-2 d-flex justify-content-center justify-content-md-end">
+                            <div class="social-icons d-flex gap-3">
+                                <i class="bi bi-whatsapp"></i>
+                                <i class="bi bi-instagram"></i>
+                                <i class="bi bi-facebook"></i>
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-copy text-center py-2">
+        ©2025 sPaw. Todos los derechos reservados
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+    <script src="./JS/indexSesion.js"></script>
+</body>
+
+</html>

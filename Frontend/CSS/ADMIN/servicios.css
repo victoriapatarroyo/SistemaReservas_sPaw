@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.custom-tab {
+  color: #1e2a2a !important;
+  margin-right: 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 5px 5px 0 0;
+  padding: 8px 20px !important;
+  cursor: pointer;
+}
+
+.custom-tab.seleccion {
+  border: 1px solid #dee2e6 !important;
+  border-bottom: 1px solid white !important;
+  color: #2AB7AE !important;
+}
+
+.contacto{
+    box-shadow: 2px 2px 20px rgba(240, 148, 58, 0.3);
+    background-color: #E6FAF9;
+}
+
+

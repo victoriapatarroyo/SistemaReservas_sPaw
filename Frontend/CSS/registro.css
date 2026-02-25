@@ -1,0 +1,516 @@
+
+/* Ocultar el ojo que trae el navegador */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+input[type="password"]::-webkit-textfield-decoration-container {
+    display: none;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    display: none;
+}
+
+input[type="password"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+}
+
+
+.container-registro{
+    border: 0.5px dotted #9CECE6;
+    box-shadow: 2px 2px 20px rgba(240, 148, 58, 0.3);
+    background-color: #E6FAF9;
+}
+
+
+/* REGISTRO – INPUTS PROPORCIONALES */
+
+
+
+@media (min-width: 768px) {
+    .form-registro .column-form > .d-flex {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Altura  */
+.form-registro .form-floating > .form-control {
+    height: 38px !important;
+    padding-top: 1.1rem !important;
+    padding-bottom: 0.25rem !important;
+}
+
+/*  OCULTAR ICONO ERROR BOOTSTRAP */
+.form-registro .form-control.is-invalid {
+    background-image: none !important;
+}
+
+.form-registro .form-floating {
+    position: relative;
+    height: 72px;
+}
+
+/* INPUT */
+.form-registro .form-floating > .form-control {
+    height: 38px !important;
+    padding-top: 1.1rem !important;
+    padding-bottom: 0.25rem !important;
+    padding-right: 70px !important;
+}
+
+/*FLOATING ACTIVO */
+.form-registro .form-floating > .form-control:focus,
+.form-registro .form-floating > .form-control:not(:placeholder-shown) {
+    padding-top: 1.35rem !important;
+}
+
+
+.form-registro .password-toggle {
+    position: absolute;
+    right: 15px;
+    bottom: 0.1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 5;
+    color: #FFFFFF;
+}
+
+/*OJO EN ROJO CUANDO HAY ERROR*/
+.form-registro .form-control.is-invalid ~ .password-toggle {
+    color: #dc3545;
+}
+
+/* MENSAJE ERROR */
+.form-registro .error-message {
+    position: absolute;
+    left: 0;
+    top: 78%;
+    margin-top: 6px;
+    font-size: 0.81rem;
+    color: #dc3545;
+    line-height: 1.2;
+}
+
+/* === ESTILOS PERSONALIZADOS PARA BOTONES === */
+
+/* Botón "Agregar otra mascota" - estilo outline con colores de la paleta */
+.btn-agregar-mascota {
+    background-color: transparent;
+    border: 2px solid #2AB7AE;
+    color: #2AB7AE;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    padding: 8px 20px;
+    font-size: 1rem;
+    border-radius: 40px;
+    transition: 0.3s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.btn-agregar-mascota:hover {
+    background-color: #2AB7AE;
+    color: #ffffff;
+    border-color: #2AB7AE;
+}
+
+.btn-agregar-mascota:active,
+.btn-agregar-mascota:focus {
+    background-color: #249d95;
+    border-color: #249d95;
+    color: #ffffff;
+    outline: none;
+}
+
+/* Botón "Eliminar" - estilo con naranja de la paleta */
+.btn-eliminar-mascota {
+    background-color: #f08e3a;
+    border: 2px solid #f08e3a;
+    color: #1e2a2a;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    padding: 8px 20px;
+    font-size: 1rem;
+    border-radius: 40px;
+    transition: 0.3s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.btn-eliminar-mascota:hover {
+    background-color: #e97502;
+    border-color: #e97502;
+    color: #ffffff;
+}
+
+.btn-eliminar-mascota:active,
+.btn-eliminar-mascota:focus {
+    background-color: #d06802;
+    border-color: #d06802;
+    color: #ffffff;
+    outline: none;
+}
+
+/* Icono dentro de los botones */
+.btn-agregar-mascota i,
+.btn-eliminar-mascota i {
+    margin-right: 0.4rem;
+    font-size: 1rem;
+}
+
+/* Select cerrado */
+.form-select.entrada {
+    color: #ffffff;
+    background-color: transparent;
+    border-color: #ffffff;
+}
+
+/* Select enfocado */
+.form-select.entrada:focus {
+    color: #ffffff;
+    background-color: transparent;
+    border-color: #ffffff;
+    box-shadow: none;
+}
+
+/* Opciones del dropdown */
+.form-select.entrada option {
+    color: #ffffff;                 /* texto blanco */
+    background-color: #2AB7AE;      /* RGB(42, 183, 174) */
+}
+
+/* Placeholder */
+.form-select.entrada option[value=""] {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Hover (cuando el navegador lo permite) */
+.form-select.entrada option:hover,
+.form-select.entrada option:checked {
+    background-color: #239e97; /* un poco más oscuro para contraste */
+}
+
+/* Estilos para la información de tamaño de mascota */
+.size-info-icon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 3;
+}
+
+.size-info-icon:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+    .form-registro .form-floating {
+        height: 62px;
+    }
+
+    .form-registro .password-toggle {
+        bottom: 0.55rem;
+    }
+
+    .form-registro .error-message {
+        bottom: -18px;
+    }
+}
+
+/* Alineación vertical: centrar botones con el input de mascota */
+.form-registro .column-form > div > .w-100.w-md-50.m-3.d-flex.align-items-center {
+    align-items: center !important;
+    min-height: 72px;
+    display: flex !important;
+    justify-content: flex-start !important; /* Alinear a la izquierda */
+}
+
+.form-registro .column-form > div > .w-100.w-md-50.m-3.d-flex.align-items-center button {
+    margin-top: -17px; /* Ajuste para centrar con el input */
+}
+
+@media (max-width: 767px) {
+    .form-registro .column-form > div > .w-100.w-md-50.m-3.d-flex.align-items-center {
+        min-height: 62px;
+        justify-content: center !important; /* En móvil centrado */
+    }
+
+    .form-registro .column-form > div > .w-100.w-md-50.m-3.d-flex.align-items-center button {
+        margin-top: -12px;
+    }
+}
+
+.form-floating {
+    position: relative;
+}
+
+/* advertencia de contraseña */
+.password-bubble {
+    position: absolute;
+    bottom: calc(100% + 16px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: auto;
+    padding: 14px 16px;
+    background: #ffffff;
+    color: #333;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.18),
+        0 4px 10px rgba(0, 0, 0, 0.08);
+
+    font-size: 13.5px;
+    line-height: 1.45;
+    display: none;
+    z-index: 1000;
+    animation: bubbleInTop 0.25s ease-out;
+}
+
+
+.password-bubble::before {
+    content: "⚠️ Requisitos de contraseña";
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #f08e3a;
+}
+
+.password-bubble::after {
+    content: "";
+    position: absolute;
+
+    width: 1.4px;
+    height: 1.4px;
+
+    background: #ffffff;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    left: 50%;
+    bottom: -7px;
+    transform: translateX(-50%) rotate(45deg);
+
+    box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ANIMACIÓN */
+@keyframes bubbleInTop {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(6px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+/* Inicio Burbuja de tamaño de perro */
+/* Burbuja de tamaño de mascota */
+.size-bubble {
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background-color: #2AB7AE;
+    color: #ffffff;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    width: 220px;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.size-bubble {
+    position: absolute;
+    bottom: calc(90% + 16px);
+    left: calc(50% + 16px);
+    right: 1.2rem;
+    top: -200%;
+    transform: translateX(-50%);
+    /* transform: translateY(-10%); */
+    width: 220px;
+    padding: 14px 16px;
+    background: #ffffff;
+    color: #333;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.18),
+        0 4px 10px rgba(0, 0, 0, 0.08);
+    font-size: 13.5px;
+    line-height: 1.45;
+    display: none;
+    z-index: 1000;
+    animation: bubbleInTop 0.25s ease-out;
+    /* cursor: pointer;
+    pointer-events: none !important; */
+}
+
+
+.size-bubble::before {
+    content: "⚠️ Diferencias de tamaño";
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #f08e3a;
+}
+
+.size-bubble::after {
+    content: "";
+    position: absolute;
+
+    width: 1.4px;
+    height: 1.4px;
+
+    background: #ffffff;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    left: 50%;
+    bottom: -7px;
+    transform: translateX(-50%) rotate(45deg);
+
+    box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Fin Burbuja de tamaño de perro */
+
+/* Conservar el color de texto y fondo en los campos del formulario */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+
+    -webkit-text-fill-color: #ffffff !important;
+    /* texto blanco */
+    caret-color: #ffffff;
+
+    -webkit-box-shadow: 0 0 0 30px #2ab7ae inset !important;
+    box-shadow: 0 0 0 30px #2ab7ae inset !important;
+
+    background-color: #2ab7ae !important;
+
+    transition: background-color 9999s ease-in-out 0s;
+}
+.form-registro input,
+.form-registro select,
+.form-registro textarea {
+    color: #ffffff !important;
+    caret-color: #ffffff !important;
+}
+
+.form-registro input:focus,
+.form-registro select:focus,
+.form-registro textarea:focus {
+    color: #ffffff !important;
+    caret-color: #ffffff !important;
+}
+
+/* Validación Bootstrap */
+.form-registro .form-control.is-valid,
+.form-registro .form-control.is-invalid,
+.form-registro .form-select.is-valid,
+.form-registro .form-select.is-invalid {
+    color: #fff !important;
+    caret-color: #ffffff !important;
+}
+
+/* Separar password toggle de Iconos de validación de Bootstrap (Error/ Check) */
+
+.form-registro .form-floating {
+    position: relative !important;
+}
+
+.form-registro .form-floating input[type="password"] {
+    padding-right: 5rem !important;
+    /* ← Espacio para toggle + check/error */
+}
+
+/* 3. TOGGLE PASSWORD - POSICIÓN FIJA (más a la derecha) */
+.form-registro .password-toggle {
+    right: 1.8rem center !important;
+    /* ← Toggle LEJOS del borde */
+    position: absolute !important;
+    top: 42% !important;
+    transform: translateY(-50%) !important;
+    /* ← CENTRA VERTICAL exacto */
+    bottom: 0.1rem;
+    width: 1.3rem !important;
+    /* Modificar la ubicación horizontal */
+    height: 2rem !important;
+    border: none !important;
+    background: transparent !important;
+    z-index: 10;
+}
+
+/* 4. ICONOS BOOTSTRAP VALIDACIÓN - Más cerca */
+.form-registro .form-floating input.is-valid {
+    background-position: right 2.4rem center !important;
+    /* ✓ Check */
+    top: 50% !important;
+}
+
+.form-registro .form-floating input.is-invalid {
+    background-position: right 2.4rem center !important;
+    /* ✗ Error */
+    top: 50% !important;
+}
+
+/*OJO EN ROJO CUANDO HAY ERROR*/
+.form-registro .form-control.is-invalid~.password-toggle {
+    color: #dc3545;
+}
+
+/* Icono de burbuja informativa de tamaño de perro */
+.form-registro .size-info-icon {
+    right: 1.8rem center !important;
+    /* ← Toggle LEJOS del borde */
+    position: absolute !important;
+    top: 42% !important;
+    transform: translateY(-50%) !important;
+    /* ← CENTRA VERTICAL exacto */
+    bottom: 0.1rem;
+    width: 3rem !important;
+    /* Modificar la ubicación horizontal */
+    height: 2rem !important;
+    border: none !important;
+    background: transparent !important;
+    z-index: 10;
+}

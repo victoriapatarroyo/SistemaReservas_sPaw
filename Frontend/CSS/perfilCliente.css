@@ -1,0 +1,302 @@
+/* Estilos específicos para la página de perfil usando la paleta sPaw */
+.profile-container {
+    background-color: #E6FAF9; /* Fondo claro de registro.css */
+    min-height: 100vh;
+    padding-bottom: 3rem;
+}
+
+.profile-header {
+    background-color: #2AB7AE; /* Verde sPaw */
+    color: #FFFFFF;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* Tarjetas de perfil */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(42, 183, 174, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    border-bottom: none;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.card-header.bg-primary {
+    background-color: #2AB7AE !important; /* Verde */
+}
+
+.card-header.bg-warning {
+    background-color: #f08e3a !important; /* Naranja */
+    color: #FFFFFF !important;
+}
+
+.card-header.bg-info {
+    background-color: #239e97 !important; /* Verde más oscuro */
+}
+
+/* Tarjetas de mascotas */
+.pet-card {
+    background: #FFFFFF;
+    border: 1px solid #2AB7AE;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.pet-card:hover {
+    border-color: #f08e3a;
+}
+
+.pet-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2AB7AE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.pet-info {
+    flex-grow: 1;
+}
+
+.pet-name {
+    font-weight: 600;
+    color: #1e2a2a;
+    margin-bottom: 0.25rem;
+}
+
+.pet-size {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.pet-size-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.size-pequeno {
+    background-color: rgba(42, 183, 174, 0.1);
+    color: #2AB7AE;
+    border: 1px solid #2AB7AE;
+}
+
+.size-mediano {
+    background-color: rgba(240, 142, 58, 0.1);
+    color: #f08e3a;
+    border: 1px solid #f08e3a;
+}
+
+.size-grande {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.pet-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-pet-action {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-edit-pet {
+    background-color: rgba(42, 183, 174, 0.1);
+    color: #2AB7AE;
+    border: 1px solid #2AB7AE;
+}
+
+.btn-edit-pet:hover {
+    background-color: #2AB7AE;
+    color: #FFFFFF;
+}
+
+.btn-delete-pet {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.btn-delete-pet:hover {
+    background-color: #dc3545;
+    color: #FFFFFF;
+}
+
+/* Formularios en perfil - Reutilizando estilos del registro */
+#formPerfil .form-floating,
+#formNuevaMascota .form-floating {
+    position: relative;
+}
+
+#formPerfil .entrada,
+#formNuevaMascota .entrada {
+    color: #ffffff !important;
+    background-color: #2AB7AE !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+#formPerfil .entrada:focus,
+#formNuevaMascota .entrada:focus {
+    box-shadow: 0 0 0 0.25rem rgba(240, 142, 58, 0.25) !important;
+    border-color: #f08e3a !important;
+}
+
+#formPerfil label,
+#formNuevaMascota label {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Campos de solo lectura */
+#formPerfil .entrada[readonly] {
+    background-color: rgba(42, 183, 174, 0.7) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    cursor: not-allowed;
+}
+
+/* Botones personalizados */
+.btn-success {
+    background-color: #2AB7AE !important;
+    border-color: #2AB7AE !important;
+    color: #FFFFFF !important;
+}
+
+.btn-success:hover {
+    background-color: #239e97 !important;
+    border-color: #239e97 !important;
+}
+
+.btn-primary {
+    background-color: #f08e3a !important;
+    border-color: #f08e3a !important;
+    color: #FFFFFF !important;
+}
+
+.btn-primary:hover {
+    background-color: #e97502 !important;
+    border-color: #e97502 !important;
+}
+
+.btn-danger {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: #FFFFFF !important;
+}
+
+.btn-danger:hover {
+    background-color: #c82333 !important;
+    border-color: #c82333 !important;
+}
+
+/* Tabla de historial */
+.table th {
+    background-color: rgba(42, 183, 174, 0.1);
+    color: #2AB7AE;
+    font-weight: 600;
+    border-bottom: 2px solid #f08e3a;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(240, 142, 58, 0.05);
+}
+
+/* Estados vacíos */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #666;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #2AB7AE;
+    opacity: 0.7;
+}
+
+/* Loader */
+.spinner-border.text-primary {
+    color: #f08e3a !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-header {
+        padding: 1.5rem 0;
+    }
+    
+    .pet-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .pet-avatar {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .pet-actions {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    
+    .pet-info {
+        text-align: center;
+    }
+}
+
+/* Alerta personalizada */
+.alert-info {
+    background-color: rgba(42, 183, 174, 0.1);
+    border-color: #2AB7AE;
+    color: #1e2a2a;
+}
+
+.alert-info i {
+    color: #2AB7AE;
+}
+
+/* Texto pequeño informativo */
+.text-muted i {
+    color: #2AB7AE;
+}
+
+/* Card para agregar mascota */
+.card.border-primary {
+    border-color: #2AB7AE !important;
+}
+
+.card.border-primary .card-header {
+    background-color: #2AB7AE !important;
+}

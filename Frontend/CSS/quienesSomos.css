@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* Empiezan Estilos para misión y visión */
+.titulo {
+  margin-top: 30px;
+}
+
+#principal {
+  font-size: 18px;
+}
+
+.imagen {
+  text-align: center;
+}
+
+#valor {
+  margin-top: 0;
+}
+
+.list-style {
+  width: 15px;
+  padding-bottom: 5px;
+  padding-right: 2px;
+}
+
+.lista-valores {
+  list-style: none;
+  text-align: left;
+}
+/* Termina Estilos para misión y visión */
+
+/* Comienzan estilos Nuestro equipo */
+.h1.fredoka-semi-bold,
+.subtittle {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 60px;
+  color: #2ab7ae;
+}
+
+.subtittle {
+  font-weight: 500;
+  font-size: 30px;
+  color: #1e2a2a;
+}
+
+.p-text {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #1e2a2a;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  perspective: 1000px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  border: 0.01px dotted #2ab7ae;
+  box-shadow: 2px 4px 8px 0 rgba(42, 183, 174, 0.5);
+  border-radius: 20px;
+}
+
+.flip-card:hover {
+  transform: scale(1.2);
+  z-index: 20;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.flip-card-front {
+  background-color: #d8fffc;
+  color: #333;
+}
+
+.flip-card-back {
+  background-color: #2ab7ae;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card:hover .flip-card-front {
+  background: rgba(224, 243, 242, 0.7);
+  border: 1px solid rgba(240, 142, 58, 0.3);
+  box-shadow: 0 8px 32px rgba(240, 142, 58, 0.15);
+}
+
+.flip-card:hover .flip-card-back {
+  background: rgba(42, 183, 174, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #2ab7ae;
+}
+
+.social-icons-cards {
+  margin-top: 20px;
+}
+
+.social-icons-cards a {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.social-icons-cards a:hover {
+  color: #f08e3a;
+}
+/*termina estilos Nuestro equipo */
+
+
+
