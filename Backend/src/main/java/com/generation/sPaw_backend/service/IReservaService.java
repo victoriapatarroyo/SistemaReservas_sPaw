@@ -13,6 +13,8 @@ public interface IReservaService {
     List<Reserva> obtenerPorMascota(Long idMascota);
     List<Reserva> obtenerPorGroomer(Long idGroomer);
     List<Reserva> obtenerPorUsuario(Long idUsuario);
+    List<LocalTime> obtenerHorariosDisponibles(LocalDate fecha, Long idGroomer);
+    List<Reserva> obtenerPorGroomerYFecha(LocalDate fecha, Long idGroomer);
     Reserva guardarReserva(Long usuarioId, Reserva reserva);
     Reserva actualizarReserva(Long id, Reserva reservaActualizada);
     void eliminarReserva(Long id);
@@ -20,4 +22,5 @@ public interface IReservaService {
     Reserva asignarServicio(Long idReserva, Long idServicio);
     Reserva asignarMascota(Long idReserva, Long idMascota);
     boolean verificarDisponibilidad(LocalDate fecha, LocalTime horaInicio, LocalTime horaFinal, Long idGroomer);
+
 }

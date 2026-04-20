@@ -9,7 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/reservas")
@@ -91,4 +93,23 @@ public class ReservaController {
         }
     }
 
+    // GET /api/reservas/disponibilidad?fecha=2025-06-10&idGroomer=1
+    @GetMapping("/disponibilidad")
+    public ResponseEntity<?> consultarDisponibilidad(
+            @RequestParam LocalDate fecha,
+            @RequestParam Long idGroomer) {
+        List<LocalTime> horarios = reservaService.obtenerHorariosDisponibles(fecha, idGroomer);
+        if (horarios.isEmpty()) {
+            return ResponseEntity.ok(Map.of("mensaje", "No hay horarios disponibles para esta fecha"));
+        }
+        return ResponseEntity.ok(horarios);
+    }
+
+    // GET /api/reservas/agenda?fecha=2025-06-10&idGroomer=1
+    @GetMapping("/agenda")
+    public ResponseEntity<List<Reserva>> verAgendaGroomer(
+            @RequestParam LocalDate fecha,
+            @RequestParam Long idGroomer) {
+        return ResponseEntity.ok(reservaService.obtenerPorGroomerYFecha(fecha, idGroomer));
+    }
 }

@@ -13,6 +13,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ReservaService implements IReservaService {
@@ -179,6 +180,37 @@ public class ReservaService implements IReservaService {
         }
 
         return true;
+    }
+
+    @Override
+    public List<LocalTime> obtenerHorariosDisponibles(LocalDate fecha, Long idGroomer) {
+        // Horario de atención: 9:00 a 18:00, turnos de 1 hora
+        List<LocalTime> todosLosHorarios = new ArrayList<>();
+        LocalTime inicio = LocalTime.of(9, 0);
+        LocalTime cierre = LocalTime.of(18, 0);
+
+        while (inicio.isBefore(cierre)) {
+            todosLosHorarios.add(inicio);
+            inicio = inicio.plusHours(1);
+        }
+
+        // Filtrar los que ya están ocupados
+        List<Reserva> reservasDelDia = reservaRepository
+                .findByFechaAndGroomerIdGroomer(fecha, idGroomer);
+
+        return todosLosHorarios.stream()
+                .filter(hora -> {
+                    LocalTime horaFin = hora.plusHours(1);
+                    return reservasDelDia.stream().noneMatch(r ->
+                            hora.isBefore(r.getHoraFinal()) && horaFin.isAfter(r.getHoraInicio())
+                    );
+                })
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Reserva> obtenerPorGroomerYFecha(LocalDate fecha, Long idGroomer) {
+        return reservaRepository.findByFechaAndGroomerIdGroomer(fecha, idGroomer);
     }
 
 }

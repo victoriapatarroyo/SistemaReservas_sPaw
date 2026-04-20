@@ -1,127 +1,297 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reservas sPaw</title>
-    <link rel="stylesheet" href="../CSS/navFooter.css">
-    <link rel="stylesheet" href="../CSS/reservas.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../CSS/navFooter.css" />
+    <link rel="stylesheet" href="../CSS/reservas.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
 
-<body>
+    <!-- ── Estilos para el bloque de disponibilidad ── -->
+    <style>
+      /* Spinner dentro del select de hora */
+      #horaReserva:disabled {
+        background-color: #f8f9fa;
+        cursor: not-allowed;
+        opacity: 0.75;
+      }
+
+      /* Badge de disponibilidad */
+      #disponibilidad-feedback .badge {
+        font-size: 0.78rem;
+        padding: 0.4em 0.75em;
+        border-radius: 20px;
+      }
+
+      /* Agenda del groomer */
+      #agenda-groomer {
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      #agenda-groomer .agenda-header {
+        background: linear-gradient(135deg, #6a4c93, #c77dff);
+        color: white;
+        padding: 0.75rem 1rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      #agenda-groomer .agenda-body {
+        background: #faf7ff;
+        padding: 0.75rem 1rem;
+      }
+
+      .agenda-slot {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 8px;
+        font-size: 0.82rem;
+        font-weight: 500;
+      }
+
+      .agenda-slot.ocupado {
+        background: #ffe0e0;
+        color: #c0392b;
+      }
+
+      .agenda-slot.libre {
+        background: #e0f7ea;
+        color: #1e8449;
+      }
+
+      .agenda-slot i {
+        font-size: 0.75rem;
+      }
+
+      #btn-ver-agenda {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.9rem;
+        border-radius: 20px;
+        border: 1px solid #6a4c93;
+        background: transparent;
+        color: #6a4c93;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      #btn-ver-agenda:hover {
+        background: #6a4c93;
+        color: white;
+      }
+
+      #agenda-loading {
+        font-size: 0.82rem;
+        color: #6a4c93;
+      }
+    </style>
+  </head>
+
+  <body>
     <header>
-        <header-component></header-component>
+      <header-component></header-component>
     </header>
-    <main class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
-        <section class="reservas container justify-content-center flex-grow-1">
-            <div class="contacto d-flex flex-column align-items-center my-3 p-3 rounded-2">
-                <div class="container">
-                    <h2 class="text-center mb-2 section-title titulo" id="Contacto">Reserva ahora</h2>
-                </div>
-                <div class="container d-flex justify-content-around flex-column flex-lg-row">
-                    <div class="d-flex flex-column w-100 w-md-50 p-md-3 gap-1 order-2 order-md-1 text-center">
-                        <p class="subtitulo1 text-center my-3">Vamos a reservar ahora la cita para tu mascota</p>
+    <main
+      class="d-flex flex-column align-items-center justify-content-center flex-grow-1"
+    >
+      <section class="reservas container justify-content-center flex-grow-1">
+        <div
+          class="contacto d-flex flex-column align-items-center my-3 p-3 rounded-2"
+        >
+          <div class="container">
+            <h2 class="text-center mb-2 section-title titulo" id="Contacto">
+              Reserva ahora
+            </h2>
+          </div>
+          <div
+            class="container d-flex justify-content-around flex-column flex-lg-row"
+          >
+            <div
+              class="d-flex flex-column w-100 w-md-50 p-md-3 gap-1 order-2 order-md-1 text-center"
+            >
+              <p class="subtitulo1 text-center my-3">
+                Vamos a reservar ahora la cita para tu mascota
+              </p>
 
-                        <form class="form-reserva mx-auto my-3" id="formReserva" novalidate>
-                            <!-- Nombre mascota -->
-                            <div class="form-floating mb-3">
-                                <select class="form-select form-select-lg entrada" id="nombreMascota"
-                                    name="nombreMascota" required>
-                                    <!-- Las opciones se llenan dinámicamente -->
-                                </select>
-                                <label for="nombreMascota">Selecciona tu mascota</label>
-                            </div>
-                            <!-- Groomer -->
-                            <div class="form-floating mb-3">
-                                <select class="form-select form-select-lg entrada" id="nombreGroomer"
-                                    name="nombreGroomer" required>
-                                    <!-- Las opciones se llenan dinámicamente -->
-                                </select>
-                                <label for="nombreGroomer">Selecciona tu groomer favorito</label>
-                            </div>
-                            <!-- Servicio -->
-                            <div class="form-floating mb-3">
-                                <select class="form-select form-select-lg entrada" id="nombreServicio"
-                                    name="nombreServicio" required>
-                                    <!-- Las opciones se llenan dinámicamente -->
-                                </select>
-                                <label for="nombreServicio">Selecciona un servicio</label>
-                            </div>
-                            <!-- Fecha -->
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-control-lg entrada" id="fechaReserva"
-                                    name="fechaReserva" placeholder=" " data-input required>
-                                <label for="fechaReserva">Selecciona una fecha</label>
-                            </div>
-                            <!-- Hora -->
-                            <div class="form-floating mb-3">
-                                <select class="form-select form-select-lg entrada" id="horaReserva" name="horaReserva"
-                                    required>
-                                    <option value="" disabled selected></option>
-                                    <option value="08:00">08:00 AM</option>
-                                    <option value="10:00">10:00 AM</option>
-                                    <option value="12:00">12:00 PM</option>
-                                    <option value="14:00">02:00 PM</option>
-                                    <option value="16:00">04:00 PM</option>
-                                    <option value="18:00">06:00 PM</option>
-                                </select>
-                                <label for="horaReserva">Selecciona una hora</label>
-                            </div>
-                            <!-- Botón -->
-                            <div class="form-floating d-flex justify-content-center mt-4">
-                                <button type="button" id="btnReservar" class="boton-login">Reservar</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="imagen-contacto w-100 w-md-50 p-md-3 order-1">
-                        <img class="img-contacto w-100" src="../IMG/spaw18.png" alt="">
-                    </div>
+              <form
+                class="form-reserva mx-auto my-3"
+                id="formReserva"
+                novalidate
+              >
+                <!-- Mascota -->
+                <div class="form-floating mb-3">
+                  <select
+                    class="form-select form-select-lg entrada"
+                    id="nombreMascota"
+                    name="nombreMascota"
+                    required
+                  >
+                    <option value="" disabled selected></option>
+                  </select>
+                  <label for="nombreMascota">Selecciona tu mascota</label>
                 </div>
+
+                <!-- Groomer -->
+                <div class="form-floating mb-3">
+                  <select
+                    class="form-select form-select-lg entrada"
+                    id="nombreGroomer"
+                    name="nombreGroomer"
+                    required
+                  >
+                    <option value="" disabled selected></option>
+                  </select>
+                  <label for="nombreGroomer"
+                    >Selecciona tu groomer favorito</label
+                  >
+                </div>
+
+                <!-- ── NUEVO: Agenda del groomer ── -->
+                <div id="agenda-groomer" class="mb-3 d-none border">
+                  <div
+                    class="agenda-header d-flex justify-content-between align-items-center"
+                  >
+                    <span
+                      ><i class="bi bi-calendar2-week me-2"></i>Agenda del
+                      groomer</span
+                    >
+                    <span
+                      id="agenda-fecha-titulo"
+                      class="fw-normal opacity-75"
+                    ></span>
+                  </div>
+                  <div class="agenda-body">
+                    <div id="agenda-loading" class="text-center py-2 d-none">
+                      <div
+                        class="spinner-border spinner-border-sm text-secondary me-2"
+                        role="status"
+                      ></div>
+                      Consultando agenda...
+                    </div>
+                    <div id="agenda-slots" class="d-flex flex-wrap gap-2"></div>
+                  </div>
+                </div>
+
+                <!-- Servicio -->
+                <div class="form-floating mb-3">
+                  <select
+                    class="form-select form-select-lg entrada"
+                    id="nombreServicio"
+                    name="nombreServicio"
+                    required
+                  >
+                    <option value="" disabled selected></option>
+                  </select>
+                  <label for="nombreServicio">Selecciona un servicio</label>
+                </div>
+
+                <!-- Fecha -->
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control form-control-lg entrada"
+                    id="fechaReserva"
+                    name="fechaReserva"
+                    placeholder=" "
+                    data-input
+                    required
+                  />
+                  <label for="fechaReserva">Selecciona una fecha</label>
+                </div>
+
+                <!-- ── Hora: se llena dinámicamente según disponibilidad ── -->
+                <div class="mb-3">
+                  <div class="form-floating">
+                    <select
+                      class="form-select form-select-lg entrada"
+                      id="horaReserva"
+                      name="horaReserva"
+                      required
+                      disabled
+                    >
+                      <option value="" disabled selected>
+                        Selecciona groomer y fecha primero
+                      </option>
+                    </select>
+                    <label for="horaReserva">Horarios disponibles</label>
+                  </div>
+                  <!-- Badge de estado de disponibilidad -->
+                  <div id="disponibilidad-feedback" class="mt-1"></div>
+                </div>
+
+                <!-- Botón -->
+                <div class="form-floating d-flex justify-content-center mt-4">
+                  <button type="button" id="btnReservar" class="boton-login">
+                    Reservar
+                  </button>
+                </div>
+              </form>
             </div>
+            <div class="imagen-contacto w-100 w-md-50 p-md-3 order-1">
+              <img class="img-contacto w-100" src="../IMG/spaw18.png" alt="" />
             </div>
-        </section>
-        <section class="servicios-reservados container my-5">
-            <h2 class="subtitulo text-center fw-bold mb-4">Mis Reservas</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="servicio-reservado">
-                <!-- Las cards se cargan aquí -->
-            </div>
-        </section>
-        <div id="protected-data" style="margin-top: 1rem;"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="servicios-reservados container my-5">
+        <h2 class="subtitulo text-center fw-bold mb-4">Mis Reservas</h2>
+        <div
+          class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
+          id="servicio-reservado"
+        >
+          <!-- Las cards se cargan aquí -->
+        </div>
+      </section>
+      <div id="protected-data" style="margin-top: 1rem"></div>
     </main>
+
     <footer class="footer-custom py-5">
-        <footer-component></footer-component>
+      <footer-component></footer-component>
     </footer>
     <div class="footer-copy text-center py-2">
-        ©2025 sPaw. Todos los derechos reservados
+      ©2025 sPaw. Todos los derechos reservados
     </div>
 
-
-    <!--Librerias-->
+    <!-- Librerías -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
 
-    <!--componentes-->
+    <!-- Componentes -->
     <script src="../components/reservaCard.js"></script>
     <script src="../components/header.js"></script>
     <script src="../components/footer.js"></script>
 
-
-    <!-- scripts -->
+    <!-- Scripts -->
     <script src="../JS/alertas.js"></script>
     <script src="../JS/reservas.js"></script>
     <script src="../JS/indexSesion.js"></script>
-
-</body>
-
+  </body>
 </html>

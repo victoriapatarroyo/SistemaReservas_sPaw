@@ -106,7 +106,13 @@ public class UsuarioService implements IUsuarioService{
             usuarioExistente.setApellido(usuarioActualizado.getApellido());
             usuarioExistente.setTelefono(usuarioActualizado.getTelefono());
             usuarioExistente.setEmail(usuarioActualizado.getEmail());
-            usuarioExistente.setPasswordUsuario(usuarioActualizado.getPasswordUsuario());
+            //usuarioExistente.setPasswordUsuario(usuarioActualizado.getPasswordUsuario());
+            if (usuarioActualizado.getPasswordUsuario() != null &&
+                    !usuarioActualizado.getPasswordUsuario().isBlank()) {
+                usuarioExistente.setPasswordUsuario(
+                        passwordEncoder.encode(usuarioActualizado.getPasswordUsuario())
+                );
+            }
             usuarioExistente.setRol(usuarioActualizado.getRol());
 
             // Guardar el usuario actualizado
